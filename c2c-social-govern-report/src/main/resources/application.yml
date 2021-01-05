@@ -1,0 +1,41 @@
+server:
+  port: 8860
+
+spring:
+  application:
+    # 应用名称
+    name: c2c-social-govern-report
+  # 配置 Nacos 注册中心
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://127.0.0.1:3306/db_c2c?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123321
+    driverClassName: com.mysql.jdbc.Driver
+    initialSize: 1
+    minIdle: 1
+    maxActive: 50
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filters: stat,wall,log4j
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+
+dubbo:
+  application:
+    name: c2c-social-govern-report
+  cloud:
+    # 用于消费者订阅提供方的应用名称列表
+    subscribed-services: c2c-social-govern-reviewer,c2c-social-govern-reward
+  scan:
+    base-packages: com.daobili.social.report
