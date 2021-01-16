@@ -14,4 +14,11 @@ public interface ReviewerTaskStatusDAO {
      * @param reviewerTaskStatus 评审处理任务状态
      */
     void add(ReviewerTaskStatus reviewerTaskStatus);
+
+
+    /**
+     * 更新评审员任务处理举报任务状态
+     * @param reviewerTaskStatus 评审处理任务状态
+     */
+    void update(ReviewerTaskStatus reviewerTaskStatus);
 }

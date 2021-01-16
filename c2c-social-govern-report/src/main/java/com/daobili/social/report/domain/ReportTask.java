@@ -32,6 +32,20 @@ public class ReportTask {
      */
     private Long targetId;
 
+    /**
+     * 举报任务处理  状态
+     * 1 处理中
+     * 2 已完成
+     */
+    private Integer reportStatus;
+
+    /**
+     * 举报任务结果
+     * -1 未投票 1 通过 2 未通过
+     */
+    private Integer reportResult;
+
+
 
     public Long getId() {
         return id;
@@ -73,13 +87,19 @@ public class ReportTask {
         this.targetId = targetId;
     }
 
-    public ReportTask() {
+    public Integer getReportStatus() {
+        return reportStatus;
     }
 
-    public ReportTask(String type, Long reportUserId, String reportContent, Long targetId) {
-        this.type = type;
-        this.reportUserId = reportUserId;
-        this.reportContent = reportContent;
-        this.targetId = targetId;
+    public void setReportStatus(Integer reportStatus) {
+        this.reportStatus = reportStatus;
+    }
+
+    public Integer getReportResult() {
+        return reportResult;
+    }
+
+    public void setReportResult(Integer reportResult) {
+        this.reportResult = reportResult;
     }
 }

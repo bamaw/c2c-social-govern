@@ -35,7 +35,7 @@ public interface ReportTaskVoteMapper {
 
 
     /**
-     * 查询举报任务的投票
+     * 根据举报任务id查询举报任务的投票
      * @param reportTaskId 举报任务id
      * @return 举报任务投票
      */

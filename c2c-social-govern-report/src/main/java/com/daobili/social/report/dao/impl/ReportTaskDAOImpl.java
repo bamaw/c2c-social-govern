@@ -29,4 +29,25 @@ public class ReportTaskDAOImpl implements ReportTaskDAO {
     public void add(ReportTask reportTask) {
         reportTaskMapper.insert(reportTask);
     }
+
+
+    /**
+     * 更新一个举报任务
+     * @param reportTask 举报任务
+     */
+    @Override
+    public void update(ReportTask reportTask) {
+        reportTaskMapper.update(reportTask);
+    }
+
+
+    /**
+     * 通过id查询对应的举报任务
+     * @param id
+     * @return
+     */
+    @Override
+    public ReportTask findById(Long id) {
+        return reportTaskMapper.selectById(id);
+    }
 }

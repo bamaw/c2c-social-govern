@@ -59,4 +59,20 @@ public class ReviewServiceImpl implements ReviewerService {
 
         return reviewerIds;
     }
+
+    /**
+     * 完成投票
+     * @param reviewerId 评审员id
+     * @param reportTaskId 举报任务id
+     */
+    @Override
+    public void finishVote(Long reviewerId, Long reportTaskId) {
+
+        ReviewerTaskStatus reviewerTaskStatus = new ReviewerTaskStatus();
+        reviewerTaskStatus.setReviewerId(reviewerId);
+        reviewerTaskStatus.setReportTaskId(reportTaskId);
+        reviewerTaskStatus.setStatus(ReviewerTaskStatusEnum.FINISHED.getCode());
+        reviewerTaskStatusDAO.update(reviewerTaskStatus);
+
+    }
 }

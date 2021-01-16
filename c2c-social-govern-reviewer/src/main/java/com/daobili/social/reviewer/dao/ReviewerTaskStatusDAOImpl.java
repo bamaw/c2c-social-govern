@@ -28,4 +28,13 @@ public class ReviewerTaskStatusDAOImpl implements ReviewerTaskStatusDAO {
     public void add(ReviewerTaskStatus reviewerTaskStatus) {
         reviewerTaskStatusMapper.insert(reviewerTaskStatus);
     }
+
+    /**
+     * 更新评审员任务处理举报任务状态
+     * @param reviewerTaskStatus 评审处理任务状态
+     */
+    @Override
+    public void update(ReviewerTaskStatus reviewerTaskStatus) {
+        reviewerTaskStatusMapper.update(reviewerTaskStatus);
+    }
 }

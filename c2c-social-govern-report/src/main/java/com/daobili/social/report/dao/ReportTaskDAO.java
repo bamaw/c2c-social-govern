@@ -15,4 +15,19 @@ public interface ReportTaskDAO {
      * @param reportTask 举报任务
      */
     void add(ReportTask reportTask);
+
+    /**
+     * 更新一个举报任务
+     * @param reportTask 举报任务
+     */
+    void update(ReportTask reportTask);
+
+
+    /**
+     * 通过id查询对应的举报任务
+     * @param id 举报id
+     * @return ReportTask
+     */
+    ReportTask findById(Long id);
+
 }

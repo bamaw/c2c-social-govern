@@ -26,10 +26,11 @@ public interface ReportTaskVoteDAO {
 
 
     /**
-     * 查询举报任务的所有投票
+     * 根据举报任务id查询对应举报任务的所有投票
      * @param reportTaskId 举报任务id
      * @return 举报任务投票
      */
     List<ReportTaskVote> queryByReportTaskId(Long reportTaskId);
+
 }
 

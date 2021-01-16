@@ -32,8 +32,6 @@ spring:
     filters: stat,wall,log4j
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
 
-
-
 dubbo:
   # 提供方应用信息，用于计算依赖关系
   application:
